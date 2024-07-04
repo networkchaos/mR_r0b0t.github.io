@@ -1,45 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Campatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Networkchaos || Portfolio Website</title>
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<link rel="stylesheet" href="style.css">
+  <title>mR_r0b0t | Portfolio</title>
 </head>
 <body>
-<!-- header site -->
-<nav>
-    <div class="logo"><span>Alias:</span> ~mR r0b0t~</div>
-    <ul class="navlist">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact ||</a></li>
-      
-      <li><a href="#">twitter</a></li>
-      <li><a href="#">github</a></li>
- 
+  <nav>
+    <div class="nav_header">
+      <div class="nav_logo">
+        <a href="#" class="logo">mR_r0b0t ~Inc</a>
+      </div>
+      <div class="nav_menu_btn" id="menu-btn">
+        <i class="ri-menu-line"></i>
+
+      </div>
+    </div>
+    <ul class="nav_links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#product">Projects</a></li>
+      <li><a href="contact.html">Contacts</a></li>
+      <li><a href="#map">Map</a></li>
+
     </ul>
-   
+    <div class="nav_search" id="nav-search">
+      <input type="text" placeholder="Search">
+      <span><i class="ri-search-2-line"></i></span>
+    </div>
   </nav>
+<header class="section_container header_container" id="home">
+  <div class="header_image">
+    <img src="img/5.jpg" alt="header">
+  </div>
+  <div class="header_content">
+    <div>
+      <h1>
+      Hello, I'm <br> GEORGE</br> 
+    </h1>
+  <p>
+    Hello, i am George Kinyanjui, COO of NETSHX-Inc, a passionate coder and pentester, i love to build stuff through my skills, and also want to secure the internet throught my hacking skills!
+ </p>
+ 
+ <button class="CV_btn" onclick="DownloadCV()">Download CV</button> 
+ <button class="CV_btn" onclick="contactme()">Hire me!</button> 
+</div>
+  </div>
+</header>
+
+
+
+<section class="section_container projects_container">
+  <div class="projects_cards">
+    <h2 class="section_header">Hot 🔥 Skills I possess</h2>
+    <p>Hey there, I also go by the name mR_r0b0t, </p>
+  </div>
+  <div class="projects_cards">
+    <span><i class="ri-github-fill"></i></span>
+    <h4>Languages</h4>
+    <p>SQL, C++, Python, Javascript, C, Ruby</p>
+  </div>
+  <div class="projects_cards">
+    <span><i class="ri-github-fill"></i></span>
+    <h4>Frameworks & Technologies</h4>
+    <p>laravel, Django, Node.js, MongoDb, Redis</p>
+  </div>
+  <div class="projects_cards">
+    <span><i class="ri-github-fill"></i></span>
+    <h4>Hands-on Skills</h4>
+    <p>Web Pentesting, App pentesting, reverse-engineering, Fullstak developer</p>
+  </div>
   
-<p class="jijo">Hi, I'M <span>GEORGE</span><br></p>
-<p class="p2">I'M A CYBERSECURITY<br>
-    ENTHUTHIAST
-</p>
+ 
+</section>
+<section class="section_container about_container" id="about">
+  <div class="about_header">
+    <div>
+      <h2 class="section_header">About me</h2>
+      <p class="section_description">
+        I have always had a thing about taking this apart😂, this has been my driving factor to the man i am now. I work well with people and have no problem adapting to new technologies.
+        i tend to appreciate inventions and innovation hoping one day i will make something of mine
+      </p>
+    </div>
+    <button class="about_btn" onclick="DownloadCV()">Download CV</button>
+  </div>
+  <div class="about_content">
+    <div class="about_image">
+      <img src="img/about-me-pic2.png" alt="about">
+    </div>
+    <div class="about_grid">
+      <div class="about_card">
+        <h3>1.</h3>
+        <h4>Who is GEORGE</h4>
+        <p>SOFTWARE DEVELOPER/CYBER-SECURITY EXPERT.</p>
+        
+      </div>
+      <div class="about_card">
+        <h3>2.</h3>
+        <h4>Who is am I?</h4>
+        <p>Am a 21 year old alien. Started coding while in highschool. Pretty nerdy i would say. </p>
+        
+      </div>
+      <div class="about_card">
+        <h3>3.</h3>
+        <h4>Who do i do?</h4>
+        <p>I am passionate about hacking. Tend to day dream as Mr Robot sometimes. bare with me😂.</p>
+        
+      </div>
+      <div class="about_card">
+        <h3>4.</h3>
+        <h4>My story</h4>
+        <p>unfortunately no story to tell here just a boy facinated by how computers and apps tick.</p>
+        
+      </div>
+    </div>
+  </div>
+</section>
 
-<p class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br>
-Temporibus ratione aliquam beatae doloremque reprehenderit nulla<br>
- cupiditate ipsa exercitationem rerum repellendus eos maiores cumque,<br>
-  reiciendis ab nisi laboriosam repudiandae perferendis atque?</p>
-<button type="submit" class="btn"><b>VIEW MY PROJECTS</b></button>
+
+<section class="section_container product_conteiner" id="product">
+  <h2 class="section_header">Hot 🔥 Projects</h2>
+  <div class="product_grid">
+    <div class="product_card">
+      <h4>Flutter Apps</h4>
+      <p>$87.00</p>
+      <img src="img/flutter.png" alt="project">
+
+    </div>
+    <div class="product_card">
+      <h4>Websites</h4>
+      <p>$100.00</p>
+      <img src="img/web.png" alt="project">
+
+    </div>
+    <div class="product_card">
+      <h4>Cyber-Security software</h4>
+      <p>$240.00</p>
+      <img src="img/cyber.png" alt="project">
+
+    </div>
+    <div class="product_card">
+      <h4>Automation apps</h4>
+      <p>$420.00</p>
+      <img src="img/auto.png" alt="project">
+
+    </div>
+    <div class="product_card">
+      <h4>Automation apps</h4>
+      <p>$420.00</p>
+      <img src="img/auto.png" alt="project">
+
+    </div>
+    <div class="product_card">
+      <h4>Automation apps</h4>
+      <p>$420.00</p>
+      <img src="img/auto.png" alt="project">
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section_container client_container">
+  <div class="client_content">
+    <h2 class="section_header">Clients References</h2>
+    <p class="section_description">Testimonials Highlighting Our Commitment to Quality, Exceptional Service,and Customer satisfaction</p>
+  <!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide">
+      <div class="client_card">
+        <img src="img/man.png" alt="man1">
+        <div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis vitae optio, nostrum totam voluptas ipsam?</p>
+        <h4>Joe Gikenye</h4>
+        <h5>Homeless Guy</h5>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="client_card">
+        <img src="img/man3.png" alt="man1">
+        <div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis vitae optio, nostrum totam voluptas ipsam?</p>
+        <h4>Joe Matata</h4>
+        <h5>Homeless Guy</h5>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="client_card">
+        <img src="img/man3.png" alt="man1">
+        <div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis vitae optio, nostrum totam voluptas ipsam?</p>
+        <h4>Kelvin Mutungu</h4>
+        <h5>Homeless Guy</h5>
+        </div>
+      </div>
+    </div>
+
+   
+  </div>
+
+</div>
+  </div>
+</section>
 
 
 
-<footer class="footer">github name ~networkchaos~ || Date 3/23/2024</footer>
 
-   <script src="script.js"></script> 
+
+
+<footer class="footer" id="contact">
+  <div class="section_container footer_container">
+    <div class="footer_col">
+      <div class="footer_logo">
+        <a href="#" class="logo">mR_r0b0t~Inc</a>
+      </div>
+      <p>
+        Hola me bruv
+      </p>
+      <ul class="footer_socials">
+        <li>
+<a href="#"><i class="ri-linkedin-fill"></i></a>
+
+<a href="#"><i class="ri-twitter-fill"></i></a>
+<a href="#"><i class="ri-github-fill"></i></a>
+<a href="#"><i class="ri-instagram-fill"></i></a>
+
+
+
+
+
+
+        </li>
+      </ul>
+    </div>
+    <div class="footer_col">
+      <h4>Services</h4>
+      <ul class="footer_links">
+        <li><a href="#">Contact Me</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Call</a></li>
+
+      </ul>
+    </div>
+    <div class="footer_col">
+      <h4>Resources</h4>
+      <ul class="footer_links">
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Contatcs Support</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms</a></li>
+        
+
+      </ul>
+    </div>
+    <div class="footer_col">
+      <h4>Support</h4>
+      <ul class="footer_links">
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Affiliates</a></li>
+        <li><a href="#">Sitemap</a></li>
+        <li><a href="#">Cancolation Policy</a></li>
+        <li><a href="#">Security</a></li>
+        
+
+      </ul>
+    </div>
+  </div>
+  <div class="footer_bar">
+    Copyright © 2024 Computer Scientist. All rights reserved.
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+  <script src="script.js"></script>
 </body>
 </html>
