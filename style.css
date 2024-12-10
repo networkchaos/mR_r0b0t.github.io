@@ -87,9 +87,29 @@
     margin: 0 auto;
   }
   
-  .section {
-    padding: 100px 20px;
-  }
+  .social-links {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  color: var(--primary);
+  font-size: 2em;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: var(--accent);
+  transform: scale(1.1);
+  text-shadow: 0 0 10px var(--primary);
+}
+
+.section {
+  padding: 100px 20px;
+}
   
   .section h2 {
     text-align: center;
