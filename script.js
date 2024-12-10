@@ -1,113 +1,95 @@
-const menuBtn =document.getElementById("menu-btn");
-const navLinks =document.getElementById("nav-links");
-const menuBtnIcon = menuBtn.querySelector("i");
+const canvas = document.getElementById('matrix');
+const ctx = canvas.getContext('2d');
 
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-menuBtn.addEventListener("click", (e) => {
-    navLinks.classList.toggle("open")
+const characters = 'アカサタナハマヤラワガザダバパイキシチニヒミリヰギジヂビピウクスツヌフムユルンヴグズヅブプエケセテネヘメレヱゲゼデベペオコソトノホモヨロヲゴゾドボポ';
+const fontSize = 14;
+const columns = canvas.width/fontSize;
 
-    const isOpen = navLinks.classList.contains("open");
-    menuBtnIcon.setAttribute("class", isOpen?"ri-close-line": "ri-menu-line");
-});
-navLinks.addEventListener("click", (e) => {
-    navLinks.classList.remove("open");
-    menuBtnIcon.setAttribute("class", "ri-menu-line");
+const drops = [];
+for(let x = 0; x < columns; x++) {
+    drops[x] = 1;
+}
 
-});
-
-const navSearch = document.getElementById("nav-search");
-navSearch.addEventListener("click", (e)=>{
-    navSearch.classList.toggle("open");
-
+function draw() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     
-})
-
-const scrollRevealOption ={
-    distance: "50px",
-    origin: "bottom",
-    duration: 1000,
-
-};
-ScrollReveal().reveal(".header_image img",{
-    ...scrollRevealOption,
-    origin: "right",
-});
-ScrollReveal().reveal(".header_content div",{
-    duration: 1000,
-    delay: 500,
-});
-ScrollReveal().reveal(".header_content h1",{
-    ...scrollRevealOption,
-    delay: 1000,
-});
-ScrollReveal().reveal(".header_content p",{
-    ...scrollRevealOption,
-    delay: 500,
-});
-
-ScrollReveal().reveal(".projects_cards",{
-    ...scrollRevealOption,
-    delay: 500,
-});
-
-ScrollReveal().reveal(".about_image img",{
-    ...scrollRevealOption,
-    origin: "right",
-});
-
-ScrollReveal().reveal(".about_card",{
-    duration: 1000,
-    interval: 500,
-    delay: 500,
-});
-
-const swiper = new Swiper(".swiper", {
-    loop: true,
-});
-
-function contactme(){
-const page ="contact.html";
-window.open(page,'_blank');
+    ctx.fillStyle = '#0F0';
+    ctx.font = fontSize + 'px monospace';
+    
+    for(let i = 0; i < drops.length; i++) {
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+        ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+        
+        if(drops[i]*fontSize > canvas.height && Math.random() > 0.975)
+            drops[i] = 0;
+        
+        drops[i]++;
+    }
 }
-function DownloadCV(){
-    const link = "https://drive.google.com/file/d/13WCrt4MLfKfYBCfgNW1VTwJQTWVttdud/view?usp=sharing";
-window.open(link, '_blank');
-}
+
+setInterval(draw, 33);
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+
+
+// Audio control
+const toggleBtn = document.getElementById('toggleAudio');
+let audioContext = null;
+let oscillator = null;
+
+toggleBtn.addEventListener('click', () => {
+  if (!audioContext) {
+    // Create ambient cyberpunk sound
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+    
+    oscillator.type = 'sine';
+    oscillator.frequency.setValueAtTime(50, audioContext.currentTime);
+    gainNode.gain.setValueAtTime(0.05, audioContext.currentTime);
+    
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    oscillator.start();
+    
+    toggleBtn.querySelector('.audio-icon').textContent = '🔇';
+  } else {
+    oscillator.stop();
+    audioContext.close();
+    audioContext = null;
+    oscillator = null;
+    toggleBtn.querySelector('.audio-icon').textContent = '🔊';
+  }
+});
+
+// Responsive handling
+window.addEventListener('resize', function() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
 
 function Validatedetails(){
-const form = document.getElementById("form");
-const name = form["name"].value;
-const email = form["email"].value;
-while (name ==="" || email===""){
-    alert("fill all fields you dumwit");
-    return false;
-}
-form.submit()
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    const form = document.getElementById("form");
+    const name = form["Name"].value;
+    const email = form["Email"].value;
+    while (name ==="" || email===""){
+        alert("fill all fields you dumwit");
+        return false;
+    }
+    form.submit()
+    
+    }
+    
