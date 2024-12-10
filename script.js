@@ -47,33 +47,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Audio control
 const toggleBtn = document.getElementById('toggleAudio');
-let audioContext = null;
-let oscillator = null;
+const audioPlayer = document.getElementById('audioPlayer');
 
 toggleBtn.addEventListener('click', () => {
-  if (!audioContext) {
-    // Create ambient cyberpunk sound
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
-    
-    oscillator.type = 'sine';
-    oscillator.frequency.setValueAtTime(50, audioContext.currentTime);
-    gainNode.gain.setValueAtTime(0.05, audioContext.currentTime);
-    
-    oscillator.connect(gainNode);
-    gainNode.connect(audioContext.destination);
-    oscillator.start();
-    
-    toggleBtn.querySelector('.audio-icon').textContent = '🔇';
-  } else {
-    oscillator.stop();
-    audioContext.close();
-    audioContext = null;
-    oscillator = null;
+  if (audioPlayer.paused) {
+    audioPlayer.play();
     toggleBtn.querySelector('.audio-icon').textContent = '🔊';
+  } else {
+    audioPlayer.pause();
+    toggleBtn.querySelector('.audio-icon').textContent = '🔇';
   }
 });
+
 
 // Navigation toggle
 const navToggle = document.querySelector('.nav-toggle');
